@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Learning</title>
+    <!--Importation de JavaScript: defer or async-->
+</head>
+<body>
+
+    <h1 id="Doc Title"> </h1>
+    <p class="Game-Info">
+        Texte
+    </p>
+    <ul>
+        <li> Cars </li>
+        <li> Trucks </li>
+        <li> Boats </li>
+    </ul>
+    <!-- Dom Manipualtion with getElementBy -->
+        <script>
+            "use strict";
+            // DOM Manipulation by Element (HTML attributes)
+            const HeadingID = document.getElementById("Doc-Title");
+            const ParagraphClass = document.getElementByClassName("Game-Info");
+            const InputName = document.getElementByName("game-choice")
+        
+            const Litags = document.getElementsByTagName("li")
+
+            // DOM manipulation with Query Selection (CSS Selectors)
+            const HeadingID2 = document.querySelector("#Doc-Title");
+            const HeadingID3 = document.querySelectorALL(".Game-Info");
+        </script>
+
+        <div class="parent">
+          <ul>
+            <li> First Child Element</li>
+            <li> Other Child Element</li>
+            <li> Last Child Element</li>
+          </ul>
+        </div>
+        <script>
+            const DivParent = document.getElementsByClassName("parent");
+            const DivChildren = DivParent.children;
+            console.log(DivChildren);
+            console.warn(DivParent);
+            console.error(DivParent);
+
+            const LiElement = document.getElementByClassName("first-child");
+            const LiNestSibiling = liElement.nextElementSibling;
+            const LiPreviousSibling = LiElement.previousElementSibling;
+        </script>
+
+        <!--
+            - DOM Manipulation: generate 50 images (img tags)
+        -->
+
+        <div id="imageCoutainer">
+            <!-- Generated Images-->
+        </div>
+
+        <script>
+            const DivContainer = document.createElement('div');
+            DivContainer.className = "imgContainer";
+            document.body.append(DivContainer);
+            /*
+            const DivImgContainer = document.getElementById("imageContainer");
+            const DivImgContainer2 = document.getElementsByClassName("imgContainer");
+            const DivImgContainer3 = document.querySlector("#image Container");
+            */
+            // Loop to generate
+            const imgMax = 500;
+            const imgSrc = "Assets/products/";
+            const imgName = "Car"
+            const imgExt = ".png"
+
+            // Loop to generate x images
+            for (var i = 1; i <= imgMax; i++) {
+                var img = document.createElement('img');
+                img.src = imgSrc + imgName + "-" + i + imgExt;
+                img.alt = imgName + i ;
+                DivContainer.appendChild(img);
+            }
+
+        </script>
+
+        <script>
+            // JavaScript Class
+            class ImageGenerator {
+
+                constructor (Number = 20, Source = "Assets", Name = "Picture", Extension = ".png") {
+                    this.Number = Number;
+                    this.Source = Source + "/";
+                    this.Name = Name + "-";
+                    this.Extension = Extension;
+
+                    this.divGenerate();
+                    this.imgGenerate();
+                }
+
+                // Method to create div
+                divGnerate () {
+                    const DivContainer = document.createElement('div');
+                    DivContainer.className = "imgContainer";
+                    document.body.append(DivContainer);
+                }
+
+                imageGenerator () {
+                    for (var i = 1; i <= this.Number; i++) {
+                        var img = document.createElement('img');
+                        img.src = this.Source + this.Name 
+                    }
+                }
+            }
+
+            const ImageGeneratorInstance = new ImageGenerator();
+
+        </script>
+</body>
+</html>
